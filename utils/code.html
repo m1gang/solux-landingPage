@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=Montserrat:wght@600;700&amp;family=Newsreader:ital,wght@1,400&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{try{
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "surface-dim": "#131313",
+                            "surface": "#131313",
+                            "on-tertiary-fixed-variant": "#891e00",
+                            "surface-container-highest": "#353534",
+                            "background": "#131313",
+                            "inverse-surface": "#e5e2e1",
+                            "outline": "#8d90a2",
+                            "inverse-primary": "#004ced",
+                            "surface-container": "#201f1f",
+                            "primary": "#b7c4ff",
+                            "on-secondary-fixed-variant": "#673d00",
+                            "on-secondary-container": "#653c00",
+                            "on-surface": "#e5e2e1",
+                            "on-secondary-fixed": "#2b1700",
+                            "inverse-on-surface": "#313030",
+                            "tertiary-fixed": "#ffdbd2",
+                            "on-secondary": "#482900",
+                            "on-primary": "#002682",
+                            "error": "#ffb4ab",
+                            "surface-bright": "#3a3939",
+                            "secondary-fixed-dim": "#ffb866",
+                            "surface-tint": "#b7c4ff",
+                            "on-tertiary-fixed": "#3c0800",
+                            "surface-variant": "#353534",
+                            "on-primary-fixed": "#001452",
+                            "on-error": "#690005",
+                            "on-background": "#e5e2e1",
+                            "outline-variant": "#434656",
+                            "tertiary-fixed-dim": "#ffb4a1",
+                            "tertiary-container": "#bf3003",
+                            "surface-container-high": "#2a2a2a",
+                            "on-tertiary": "#611300",
+                            "secondary-container": "#fd9e00",
+                            "on-primary-container": "#dfe3ff",
+                            "surface-container-low": "#1c1b1b",
+                            "primary-fixed": "#dde1ff",
+                            "primary-fixed-dim": "#b7c4ff",
+                            "on-primary-fixed-variant": "#0038b6",
+                            "error-container": "#93000a",
+                            "secondary": "#ffc482",
+                            "secondary-fixed": "#ffddba",
+                            "on-surface-variant": "#c3c5d9",
+                            "on-error-container": "#ffdad6",
+                            "primary-container": "#0052ff",
+                            "tertiary": "#ffb4a1",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-tertiary-container": "#ffddd5"
+                        },
+                        borderRadius: {
+                            "DEFAULT": "0",
+                            "lg": "0",
+                            "xl": "0",
+                            "full": "0"
+                        },
+                        spacing: {
+                            "gutter": "24px",
+                            "section-gap": "120px",
+                            "grid-pattern-size": "40px",
+                            "container-padding": "64px",
+                            "unit": "8px"
+                        },
+                        fontFamily: {
+                            "label-mono": ["Space Grotesk"],
+                            "headline-italic": ["Newsreader"],
+                            "body-md": ["Inter"],
+                            "display-lg": ["Montserrat"],
+                            "body-lg": ["Inter"],
+                            "headline-xl": ["Montserrat"],
+                            "headline-lg": ["Montserrat"]
+                        },
+                        fontSize: {
+                            "label-mono": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                            "headline-italic": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "headline-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                            "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    }catch(_e){}}catch(_e){}</script>
+<style>
+        .clip-angular {
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+        }
+        .clip-angular-border {
+            position: relative;
+        }
+        .clip-angular-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.1);
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+            z-index: -1;
+            padding: 1px; /* border thickness */
+        }
+        .clip-angular-border > div {
+             clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+             height: 100%;
+             width: 100%;
+        }
+        
+    </style>
+</head><body class="bg-[#0D0D0D] text-on-surface font-body-lg min-h-screen relative overflow-x-hidden">
+<!-- Background Grid -->
+<div class="fixed inset-0 pointer-events-none z-0" style="background-color: rgb(5, 5, 12); opacity: 0.8; background-image: radial-gradient(rgb(247, 141, 69) 1px, rgb(5, 5, 12) 1px); background-size: 10px 10px; mask-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 75%); mask-size: 100% 100%; mask-repeat: no-repeat;"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 border-b border-white/10 bg-surface/30 backdrop-blur-xl flex justify-between items-center px-container-padding py-4" id="main-nav">
+<a class="text-headline-lg font-headline-lg font-bold tracking-tighter text-on-surface flex-1 logo-text transition-all duration-300" href="#">SOLUX</a>
+<div class="hidden md:flex gap-8 items-center flex-1 justify-center">
+<a class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#services">Servicios</a>
+<a class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#projects">Proyectos</a>
+<a class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#process">Proceso</a>
+<a class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#faq">Preguntas Frecuentes</a>
+<a class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#contact">Contacto</a>
+</div>
+<div class="hidden md:flex flex-1 justify-end">
+<button class="nav-btn bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-widest px-8 py-3 transition-all duration-300 hover:bg-white hover:text-black rounded-none">Solicitar Auditoría</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="relative z-10 pt-32">
+<!-- Hero Section -->
+<section class="px-container-padding mb-section-gap">
+<div class="relative w-full h-[75vh] clip-angular clip-angular-border p-[1px]">
+<div class="absolute inset-[1px] overflow-hidden bg-[#0d0d0d] clip-angular">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiOOkOD-wGFrmjt4IobyihVsKmSxpoATsWP8FFHqfUjPriEe6ZLr-711aX4qcmMVsDRuU3PTc_qw1Mm8EtGkPMiMJhBZUPJ8KoB04TK9ujgz4V32wcckHQJdleg8pINGrEKJCX64EwETi7r_hjxjLpdbH6JO2QObHlW-A2Cr0fB92dhV_Qeoj9b6fy4vO-uBtu-i1pJtdx9xKEYOHGoYkb4ov8eGGKaWZbupnkUIGzPYoiI0pxrE-BEMQ7mCemajS4q9GDWxBUNUMj9Q");'></div>
+<div class="absolute inset-0 bg-gradient-to-l from-[#0d0d0d]/95 via-[#0d0d0d]/60 to-[#0d0d0d]/30"></div>
+<div class="absolute inset-0 p-16 flex flex-col justify-center max-w-4xl items-end text-right ml-auto">
+<h1 class="font-display-lg text-display-lg text-white mb-6 leading-tight">
+                        Eficiencia / <br class=""/> <span class="font-headline-italic text-headline-italic text-primary italic" style="color: #FF9F00">Energética Industrial</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        Diseñamos, proyectamos e instalamos sistemas fotovoltaicos a gran escala y soluciones de almacenamiento inteligente para plantas de manufactura y centros logísticos.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-end">
+<button class="btn-primary rounded-none border border-primary px-6 py-3 text-primary hover:bg-primary hover:text-black transition-colors uppercase font-label-mono text-sm">Solicitar Auditoría Técnica</button>
+<button class="btn-glass rounded-none border border-white/20 px-6 py-3 hover:bg-white/10 transition-colors uppercase font-label-mono text-sm">Descargar Dossier Corporativo</button>
+</div>
+</div>
+<!-- Notch Category Buttons -->
+<div class="absolute bottom-0 right-0 flex w-full md:w-auto md:min-w-[700px] bg-black/60 backdrop-blur-xl border-t border-l border-white/10">
+<span class="flex-1 text-center py-6 border-r border-white/10 font-label-mono text-[10px] uppercase tracking-[0.2em] text-white">Fotovoltaicos</span>
+<span class="flex-1 text-center py-6 border-r border-white/10 font-label-mono text-[10px] uppercase tracking-[0.2em] text-white">BESS</span>
+<span class="flex-1 text-center py-6 font-label-mono text-[10px] uppercase tracking-[0.2em] text-white">Eficiencia Energética</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Ticker -->
+<section class="py-16 bg-surface-container-low border-y border-white/5 mb-section-gap overflow-hidden relative">
+<div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+<div class="flex gap-20 items-center whitespace-nowrap opacity-40 px-container-padding animate-scroll relative z-10">
+<span class="font-headline-lg text-headline-lg font-bold">CATERPILLAR</span>
+<span class="font-headline-lg text-headline-lg font-bold">SIEMENS</span>
+<span class="font-headline-lg text-headline-lg font-bold">SCHNEIDER</span>
+<span class="font-headline-lg text-headline-lg font-bold">ABB</span>
+<span class="font-headline-lg text-headline-lg font-bold">GENERAL ELECTRIC</span>
+<span class="font-headline-lg text-headline-lg font-bold ml-20">CATERPILLAR</span>
+</div>
+</section>
+<!-- Bento Grid Metrics -->
+<section class="px-container-padding mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-[1px] clip-angular clip-angular-border md:col-span-2 rounded-none">
+<div class="bg-surface-container-high h-full p-10 flex flex-col justify-between min-h-[288px] border-l-4 border-l-secondary clip-angular">
+<span class="font-label-mono text-label-mono text-secondary uppercase">ROI Proyectado</span>
+<div class="font-headline-xl text-[56px] leading-none text-white font-bold mt-4 mb-4">3-5 Años</div>
+<p class="font-body-md text-on-surface-variant max-w-md">Periodo estimado de retorno de inversión con beneficios de flujo de caja inmediatos.</p>
+</div>
+</div>
+<div class="glass-panel p-[1px] clip-angular clip-angular-border md:col-span-1 rounded-none">
+<div class="bg-surface-container-high h-full p-10 flex flex-col justify-between min-h-[288px] border-l-4 border-l-primary clip-angular">
+<span class="font-label-mono text-label-mono text-primary uppercase">Impacto Ambiental</span>
+<div class="font-headline-lg text-[32px] leading-tight text-white font-bold mt-4 mb-4">Descarbonización</div>
+<p class="font-body-md text-on-surface-variant">Cumple con los estándares ambientales corporativos globales y asegura certificados de energía limpia.</p>
+</div>
+</div>
+<div class="glass-panel p-[1px] clip-angular clip-angular-border md:col-span-1 rounded-none">
+<div class="bg-surface-container-high h-full p-10 flex flex-col justify-between min-h-[288px] border-l-4 border-l-tertiary clip-angular">
+<span class="font-label-mono text-label-mono text-tertiary-fixed-dim uppercase">Seguridad de Red</span>
+<div class="font-headline-lg text-[32px] leading-tight text-white font-bold mt-4 mb-4">Control de Demanda</div>
+<p class="font-body-md text-on-surface-variant">Mitigación de cargos por demanda máxima en horas pico mediante respaldo de baterías inteligentes.</p>
+</div>
+</div>
+<div class="glass-panel p-[1px] clip-angular clip-angular-border md:col-span-2 rounded-none">
+<div class="bg-surface-container-high h-full p-10 flex flex-col justify-between min-h-[288px] border-l-4 border-l-[#FF9F00] clip-angular">
+<span class="font-label-mono text-label-mono text-[#FF9F00] uppercase">CONFIABILIDAD</span>
+<div class="font-headline-xl text-[56px] leading-none text-white font-bold mt-4 mb-4">99.9% Uptime</div>
+<p class="font-body-md text-on-surface-variant max-w-md">Sistemas de respaldo inteligente y microinversores con redundancia activa para asegurar generación continua sin interrupciones.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-container-padding mb-section-gap" id="services">
+<div class="mb-16">
+<span class="font-label-mono text-label-mono text-primary uppercase mb-4 block">Capacidades Centrales</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Soluciones Industriales</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="p-4 rounded-none">
+<div class="w-12 h-12 bg-primary-container/20 border border-primary/20 flex items-center justify-center mb-6 text-primary rounded-none">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<h3 class="font-headline-lg text-[24px] text-white mb-4 uppercase">SISTEMAS FOTOVOLTAICOS INDUSTRIALES</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                    Ingeniería e instalación de arreglos solares sobre techos industriales, naves y estacionamientos (carports) utilizando paneles bifaciales Tier 1 para un rendimiento óptimo.
+                </p>
+</div>
+<div class="p-4 rounded-none">
+<div class="w-12 h-12 bg-secondary-container/20 border border-secondary/20 flex items-center justify-center mb-6 text-secondary rounded-none" style="box-shadow: 0 0 15px rgba(255, 159, 0, 0.3);">
+<span class="material-symbols-outlined">battery_0_bar</span>
+</div>
+<h3 class="font-headline-lg text-[24px] text-white mb-4 uppercase">ALMACENAMIENTO DE ENERGÍA (BESS)</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                    Sistemas de baterías de litio de alta capacidad para gestionar el consumo en horas pico y garantizar la continuidad operativa ante fallas de la red eléctrica.
+                </p>
+</div>
+<div class="p-4 rounded-none">
+<div class="w-12 h-12 bg-tertiary-container/20 border border-tertiary/20 flex items-center justify-center mb-6 text-tertiary rounded-none">
+<span class="material-symbols-outlined">show_chart</span>
+</div>
+<h3 class="font-headline-lg text-[24px] text-white mb-4 uppercase">AUDITORÍA Y EFICIENCIA ENERGÉTICA</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                    Despliegue de sensores IoT y software en la nube para auditar fugas de energía, medir el factor de potencia y optimizar el consumo de maquinaria pesada.
+                </p>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="px-container-padding mb-section-gap" id="projects">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-xl text-headline-xl text-white uppercase tracking-tighter">Despliegues Destacados</h2>
+<a class="font-label-mono text-label-mono text-primary uppercase border-b border-primary rounded-none" href="#">Ver Casos de Éxito</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group cursor-pointer rounded-none">
+<div class="aspect-[16/9] mb-6 relative clip-angular-border p-[1px] rounded-none clip-angular">
+<div class="bg-surface-container-high h-full w-full relative overflow-hidden clip-angular">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiHvZk0O9_hv4Y8jxh9WEjqxQwFLZldZsy53TyhvNdBSCfnz1jdOKfP2Er93YBPhhzIFNBaeTV83CEb7xbDpk0p62sC5-IWZgnPTWMT4YDYUsTKl7-rlZRrO--FhAZuxS_lpUaFwYmKxyBgN5BTsQ5ImveHVpKRUIHeNt9KX6bUSYGWYsm8KfW6sa3vF_NItTphLhZdGDhQl3HEnKm_qWzBvmV6VpajfQ2WILzxcBszqAVt8xhbEn9eCM4a6PKQcabyCC3zrtBg0A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+<div class="absolute bottom-10 left-8 pr-8 z-10">
+<h4 class="text-white text-headline-lg mb-1">Planta Logística Norte</h4>
+<span class="font-label-mono text-[10px] text-primary uppercase">1.2 MWp Capacidad Instalada</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer rounded-none">
+<div class="aspect-[16/9] mb-6 relative clip-angular-border p-[1px] rounded-none clip-angular">
+<div class="bg-surface-container-high h-full w-full relative overflow-hidden clip-angular">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDadcAdBDqw0_Syz6SVs_jjmdCzhoniIsSRcXhV91pveHnAGvqpFzfo1q_uM9atwH8WqL3PXydxNzYeUiRd_9ZR22Zo-4uHHzgeSoaG-Y1HMl2cqZbzq6LIPlCTzjswgLNm2rZa0Rjz5uCT3wKT8k9GSoBmd6LXfgUb6TrqtnhCmcJsU4LVLBcJwGEwzs0KRcPhs_Xvkfne-AkQ7nSKUmwsP77p3IgqH_Jcs2GeuM3dVqS-g6qrJu4J1qdh0DjrYK-k5rrLR_JULVE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+<div class="absolute bottom-10 left-8 pr-8 z-10">
+<h4 class="text-white text-headline-lg mb-1">Fábrica de Alimentos NutriCorp</h4>
+<span class="font-label-mono text-[10px] text-secondary uppercase">850 kWp + 2MWh Almacenamiento BESS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-container-padding mb-section-gap max-w-4xl mx-auto" id="faq">
+<h2 class="font-headline-xl text-headline-xl text-white mb-12 text-center uppercase tracking-tighter">Preguntas Frecuentes Técnicas</h2>
+<div class="space-y-4">
+<details class="glass-panel p-6 group cursor-pointer rounded-none border border-white/10 bg-surface-container-high" open="">
+<summary class="flex justify-between items-center font-headline-lg text-[20px] text-white list-none rounded-none">
+                    ¿Cuál es el tiempo típico de instalación para una planta de 1MW+?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant pr-4">Generalmente, una instalación de escala comercial toma de 4 a 6 meses desde la aprobación de factibilidad hasta la conexión a red, dependiendo de permisos locales y complejidad del sitio.</p>
+</details>
+<details class="glass-panel p-6 group cursor-pointer rounded-none border border-white/10 bg-surface-container-high">
+<summary class="flex justify-between items-center font-headline-lg text-[20px] text-white list-none rounded-none">
+                    ¿Soportan sus sistemas integración con infraestructura SCADA existente?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant pr-4">Sí, nuestra plataforma de monitoreo está diseñada para interoperabilidad con la mayoría de los sistemas SCADA industriales usando protocolos estándar como Modbus o DNP3.</p>
+</details>
+<details class="glass-panel p-6 group cursor-pointer rounded-none border border-white/10 bg-surface-container-high">
+<summary class="flex justify-between items-center font-headline-lg text-[20px] text-white list-none rounded-none">
+                    ¿Cuál es la tasa de degradación esperada de las baterías BESS a 10 años?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant pr-4">Nuestros sistemas de almacenamiento basados en LFP están diseñados para una larga vida útil de ciclos, manteniendo típicamente &gt;80% de capacidad tras 10 años de operación diaria.</p>
+</details>
+</div>
+</section>
+<!-- Contact & RFQ Section -->
+<section class="px-container-padding mb-section-gap" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-8">Iniciar Auditoría Técnica</h2>
+<p class="text-on-surface-variant mb-12">Contacte con nuestro equipo de ingeniería para analizar el perfil energético de su planta y el potencial de independencia de red.</p>
+<div class="space-y-6 mb-12">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white/5 flex items-center justify-center text-primary border border-white/10 rounded-none">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="">Zona Industrial 4, Parque Tecnológico, MX</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white/5 flex items-center justify-center text-primary border border-white/10 rounded-none">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="">+52 (555) SOLUX-HQ</span>
+</div>
+</div>
+<!-- Blueprint Mock-Map -->
+<div class="aspect-video bg-surface-container-high border border-white/10 relative overflow-hidden rounded-none">
+<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">engineering</span>
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant">Centro Logístico Global - Plano de Ingeniería</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-[1px] clip-angular clip-angular-border rounded-none">
+<div class="bg-surface-container-high p-10 border-t-4 border-t-primary clip-angular h-full">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-[10px] uppercase text-on-surface-variant">Nombre Completo</label>
+<input class="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder-gray-400 focus:border-[#FF9F00] focus:ring-0 focus:outline-none rounded-none p-3 transition-colors" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-[10px] uppercase text-on-surface-variant">Correo Corporativo</label>
+<input class="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder-gray-400 focus:border-[#FF9F00] focus:ring-0 focus:outline-none rounded-none p-3 transition-colors" placeholder="juan@empresa.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-[10px] uppercase text-on-surface-variant">Tipo de Planta Industrial</label>
+<select class="w-full bg-[#1a1a1a] border border-white/10 text-white focus:border-[#FF9F00] focus:ring-0 focus:outline-none rounded-none p-3 transition-colors">
+<option>Planta de Manufactura</option>
+<option>Logística / Almacén</option>
+<option>Centro de Datos</option>
+<option>Procesamiento Agrícola</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-[10px] uppercase text-on-surface-variant">Consumo Eléctrico Mensual (USD/MXN)</label>
+<select class="w-full bg-[#1a1a1a] border border-white/10 text-white focus:border-[#FF9F00] focus:ring-0 focus:outline-none rounded-none p-3 transition-colors">
+<option>$10,000 - $50,000</option>
+<option>$50,000 - $100,000</option>
+<option>+$100,000</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-[10px] uppercase text-on-surface-variant">Mensaje o Detalles del Proyecto</label>
+<textarea class="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder-gray-400 focus:border-[#FF9F00] focus:ring-0 focus:outline-none rounded-none p-3 min-h-[120px] transition-colors" placeholder="Describa brevemente sus necesidades energéticas..."></textarea>
+</div>
+<button class="bg-primary text-black font-label-mono py-4 text-lg w-full rounded-none uppercase hover:bg-white transition-colors" type="submit">Enviar Solicitud a Ingeniería</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 py-section-gap relative overflow-hidden">
+<div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row justify-between items-start px-container-padding max-w-7xl mx-auto relative z-10">
+<div class="mb-8 md:mb-0">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-4">SOLUX</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    © 2024 SOLUX Industrial. Todos los derechos reservados. Soluciones de Energía Certificadas ISO 9001 &amp; 14001.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">Navegación</span>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Servicios</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Proyectos</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Especificaciones</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">Legal</span>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Privacidad</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Términos</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest rounded-none" href="#">Sop</a></div></div></div></footer></main></body></html>
