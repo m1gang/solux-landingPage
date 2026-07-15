@@ -1,0 +1,87 @@
+---
+export interface Props {
+  title?: string;
+}
+
+const { title = 'SOLUX – Energía Industrial Inteligente' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600;700&family=Newsreader:ital,wght@1,400&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#0D0D0D] text-on-surface font-body-lg min-h-screen relative overflow-x-hidden">
+    <div
+      class="fixed inset-0 pointer-events-none z-0"
+      style="background-color: rgb(5, 5, 12); opacity: 0.8; background-image: radial-gradient(rgb(247, 141, 69) 1px, rgb(5, 5, 12) 1px); background-size: 10px 10px; mask-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 75%); mask-size: 100% 100%; mask-repeat: no-repeat;"
+    ></div>
+
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
+  .clip-angular {
+    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+  }
+  .clip-angular-border {
+    position: relative;
+  }
+  .clip-angular-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+    z-index: -1;
+    padding: 1px;
+  }
+  .clip-angular-border > .clip-inner {
+    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+    height: 100%;
+    width: 100%;
+  }
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee-scroll 30s linear infinite;
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details summary {
+    list-style: none;
+  }
+  @media (max-width: 768px) {
+    :root {
+      --container-padding: 24px;
+    }
+  }
+</style>
