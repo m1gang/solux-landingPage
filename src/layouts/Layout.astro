@@ -3,14 +3,15 @@ export interface Props {
   title?: string;
 }
 
-const { title = 'SOLUX – Energía Industrial Inteligente' } = Astro.props;
+const { title = "SOLUX – Energía Industrial Inteligente" } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/isotipo-solux.svg" />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,11 +24,14 @@ const { title = 'SOLUX – Energía Industrial Inteligente' } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#0D0D0D] text-on-surface font-body-lg min-h-screen relative overflow-x-hidden">
+  <body
+    class="bg-[#0D0D0D] text-on-surface font-body-lg min-h-screen relative overflow-x-hidden"
+  >
     <div
       class="fixed inset-0 pointer-events-none z-0"
       style="background-color: rgb(5, 5, 12); opacity: 0.8; background-image: radial-gradient(rgb(247, 141, 69) 1px, rgb(5, 5, 12) 1px); background-size: 10px 10px; mask-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 75%); mask-size: 100% 100%; mask-repeat: no-repeat;"
-    ></div>
+    >
+    </div>
 
     <slot />
   </body>
@@ -53,7 +57,7 @@ const { title = 'SOLUX – Energía Industrial Inteligente' } = Astro.props;
     position: relative;
   }
   .clip-angular-border::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.1);
@@ -67,8 +71,12 @@ const { title = 'SOLUX – Energía Industrial Inteligente' } = Astro.props;
     width: 100%;
   }
   @keyframes marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
   .animate-marquee {
     animation: marquee-scroll 30s linear infinite;
