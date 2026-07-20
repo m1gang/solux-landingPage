@@ -5,76 +5,62 @@ import logo from "../assets/icons/logo-solux.svg";
 
 <nav
   id="main-nav"
-  class="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 border-b border-white/10 bg-surface/30 backdrop-blur-xl flex justify-between items-center px-container-padding py-4 transition-all duration-500 ease-in-out"
+  class="fixed top-0 left-0 w-full z-50 border-b border-white/6 bg-black/40 backdrop-blur-sm flex justify-between items-center px-4 md:px-container-padding py-3 transition-all duration-500 ease-in-out"
 >
-  <a href="/" class="flex-1 transition-all duration-300">
-    <Image
-      src={logo}
-      alt="SOLUX - Energía Industrial Inteligente"
-      width={250}
-      height={100}
-      class="my-8"
-      loading="lazy"
-      decoding="async"
-    />
+  <a href="/" class="flex items-center gap-2 transition-all duration-300">
+    <span
+      class="font-display-lg text-xl md:text-2xl font-bold tracking-tight text-primary"
+    >
+      <Image
+        src={logo}
+        alt="SOLUX - Energía Industrial Inteligente"
+        width={200}
+        height={80}
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
   </a>
-  <div class="hidden md:flex gap-8 items-center flex-1 justify-center">
+  <div class="hidden md:flex gap-8 items-center">
     <a
       href="#services"
-      class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300"
+      class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
       >Servicios</a
     >
     <a
       href="#projects"
-      class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300"
+      class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
       >Proyectos</a
     >
     <a
       href="#faq"
-      class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300"
-      >Preguntas Frecuentes</a
+      class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+      >FAQ</a
     >
     <a
       href="#contact"
-      class="nav-link font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all duration-300"
+      class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
       >Contacto</a
     >
   </div>
-  <div class="hidden md:flex flex-1 justify-end">
+  <div class="hidden md:flex items-center">
     <button
-      class="btn-audit bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-widest px-8 py-3 transition-all duration-300 border border-primary"
+      class="btn-accent bg-primary text-on-primary font-label-mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 border border-primary transition-all duration-300"
       >Solicitar Auditoría</button
     >
   </div>
-  <button
-    class="md:hidden text-on-surface"
-    aria-label="Abrir menú de navegación"
-  >
-    <span class="material-symbols-outlined">menu</span>
+  <button class="md:hidden text-primary" aria-label="Abrir menú de navegación">
+    <span class="material-symbols-outlined text-2xl">menu</span>
   </button>
 </nav>
 
 <script>
   const nav = document.getElementById("main-nav");
-  const updateNav = () => {
-    if (window.scrollY > 50) {
-      nav.classList.add("nav-scrolled");
-      nav.classList.remove(
-        "border-b",
-        "border-white/10",
-        "bg-surface/30",
-        "backdrop-blur-xl",
-      );
-    } else {
-      nav.classList.remove("nav-scrolled");
-      nav.classList.add(
-        "border-b",
-        "border-white/10",
-        "bg-surface/30",
-        "backdrop-blur-xl",
-      );
-    }
-  };
-  updateNav();
-  document.addEventListener("scroll", updateNav, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      nav.classList.toggle("nav-compact", window.scrollY > 60);
+    },
+    { passive: true },
+  );
 </script>
