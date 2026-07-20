@@ -3,72 +3,28 @@ import { Image } from "astro:assets";
 import logo from "../assets/icons/logo-solux.svg";
 ---
 
-<footer
-  class="bg-surface-container-lowest border-t border-white/5 py-section-gap relative overflow-hidden"
->
-  <div
-    class="absolute inset-0 pointer-events-none"
-    style="background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px); opacity: 0.05;"
-  >
-  </div>
-  <div
-    class="flex flex-col md:flex-row justify-between items-start px-container-padding max-w-7xl mx-auto relative z-10"
-  >
+<footer class="bg-surface-container-lowest border-t border-white/5 py-section-gap relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px); opacity: 0.05;"></div>
+  <div class="flex flex-col md:flex-row justify-between items-start px-6 md:px-container-padding max-w-7xl mx-auto relative z-10">
     <div class="mb-8 md:mb-0">
-      <Image src={logo} alt="Logo" width={250} height={100} class="my-8" />
-
+      <Image src={logo} alt="SOLUX - Energía Industrial Inteligente" width={250} height={100} class="my-8" loading="lazy" decoding="async" />
       <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
-        &copy; 2026 SOLUX Industrial. Todos los derechos reservados. Soluciones
-        de Energía Certificadas ISO 9001 &amp; 14001.
+        &copy; 2026 SOLUX Industrial. Todos los derechos reservados. Soluciones de Energía Certificadas ISO 9001 &amp; 14001.
       </p>
     </div>
     <div class="grid grid-cols-2 gap-12">
       <div class="flex flex-col gap-4">
-        <span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">
-          Navegación
-        </span>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Servicios
-        </a>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Proyectos
-        </a>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Especificaciones
-        </a>
+        <span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">Navegación</span>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Servicios</a>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Proyectos</a>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Especificaciones</a>
       </div>
       <div class="flex flex-col gap-4">
-        <span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">
-          Legal
-        </span>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Privacidad
-        </a>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Términos
-        </a>
-        <a
-          href="#"
-          class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest"
-        >
-          Soporte
-        </a>
+        <span class="font-label-mono text-[10px] uppercase text-white/40 mb-2">Legal</span>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Privacidad</a>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Términos</a>
+        <a href="#" class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest">Soporte</a>
       </div>
     </div>
   </div>
-</footer>;
+</footer>
