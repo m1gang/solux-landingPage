@@ -1,32 +1,48 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/icons/logo-solux.svg";
+import isotipo from "../assets/icons/isotipo.svg";
 ---
 
 <nav
   id="main-nav"
-  class="fixed top-0 left-0 w-full z-50 flex justify-center border-b border-white/6 bg-black/40 backdrop-blur-sm transition-all duration-300"
+  class="fixed top-3 left-1/2 -translate-x-1/2 z-50 flex flex-col justify-center border border-white/10 bg-black/60 backdrop-blur-md transition-all duration-300 shadow-2xl"
 >
   <div
-    class="nav-inner flex items-center justify-center md:justify-between w-full mx-auto px-4 md:px-container-padding py-3 transition-all duration-300 ease-in-out"
+    class="nav-inner flex items-center justify-between w-full px-5 py-2.5 transition-all duration-300 ease-in-out"
   >
     <a
-      href="/"
+      href="#hero"
       class="flex items-center gap-2 transition-all duration-300 nav-logo"
     >
       <span
-        class="font-display-lg text-xl md:text-2xl font-bold tracking-tight text-primary"
+        class="font-display-lg text-xl md:text-2xl font-bold tracking-tight text-primary relative flex items-center transition-all duration-300 overflow-hidden w-[160px] md:w-[180px]"
+        id="logo-container"
       >
         <Image
           src={logo}
           alt="SOLUX - Energía Industrial Inteligente"
           width={180}
+          class="logo-full transition-all duration-300 min-w-[160px] md:min-w-[180px] object-contain"
           loading="lazy"
           decoding="async"
-        /></span
-      >
+        />
+        <Image
+          src={isotipo}
+          alt="SOLUX"
+          width={30}
+          class="logo-iso absolute left-0 opacity-0 transition-all duration-300 min-w-[30px] object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </span>
     </a>
-    <div class="nav-links hidden md:flex gap-8 items-center">
+    <div class="nav-links hidden md:flex gap-6 lg:gap-8 items-center">
+      <a
+        href="#hero"
+        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+        >Inicio</a
+      >
       <a
         href="#services"
         class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
@@ -42,33 +58,170 @@ import logo from "../assets/icons/logo-solux.svg";
         class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
         >FAQ</a
       >
-      <a
-        href="#contact"
-        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
-        >Contacto</a
-      >
     </div>
     <div class="nav-cta hidden md:flex items-center">
-      <button
-        class="nav-btn btn-accent bg-primary text-white font-label-mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 border border-primary transition-all duration-300"
-        >Solicitar Auditoría</button
+      <a
+        href="#contact"
+        class="nav-btn btn-accent bg-primary text-white font-label-mono text-[11px] uppercase tracking-[0.15em] px-4 py-2 border border-primary transition-all duration-300 hover:bg-transparent hover:text-primary text-center flex items-center justify-center"
+        >Solicitar Cotización</a
       >
     </div>
     <button
-      class="md:hidden text-primary"
+      id="mobile-menu-btn"
+      class="md:hidden text-primary p-1 focus:outline-none transition-transform duration-300 active:scale-95"
       aria-label="Abrir menú de navegación"
     >
-      <span class="material-symbols-outlined text-2xl">menu</span>
+      <span id="menu-icon" class="material-symbols-outlined text-2xl block transition-all duration-300">menu</span>
     </button>
+  </div>
+
+  <!-- Menú Desplegable Móvil -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden transition-all duration-300 max-h-0 opacity-0 border-t border-transparent w-full"
+  >
+    <div class="flex flex-col gap-3 p-5 bg-black/90 backdrop-blur-2xl">
+      <a
+        href="#hero"
+        class="mobile-nav-link font-label-mono text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-all duration-300 py-1.5 border-b border-white/5"
+        >Inicio</a
+      >
+      <a
+        href="#services"
+        class="mobile-nav-link font-label-mono text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-all duration-300 py-1.5 border-b border-white/5"
+        >Servicios</a
+      >
+      <a
+        href="#projects"
+        class="mobile-nav-link font-label-mono text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-all duration-300 py-1.5 border-b border-white/5"
+        >Proyectos</a
+      >
+      <a
+        href="#faq"
+        class="mobile-nav-link font-label-mono text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-all duration-300 py-1.5 border-b border-white/5"
+        >FAQ</a
+      >
+      <div class="pt-2 mt-1">
+        <a
+          href="#contact"
+          class="mobile-nav-link btn-accent bg-primary text-white font-label-mono text-xs uppercase tracking-[0.15em] px-4 py-2.5 border border-primary transition-all duration-300 text-center flex items-center justify-center w-full shadow-lg"
+          >Solicitar Cotización</a
+        >
+      </div>
+    </div>
   </div>
 </nav>
 
+<style>
+  #main-nav {
+    width: min(92%, 960px);
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+  }
+
+  #main-nav.nav-compact {
+    top: 6px;
+    width: min(85%, 820px);
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+  }
+
+  #main-nav.nav-compact .logo-full {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+  }
+
+  #main-nav.nav-compact .logo-iso {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #main-nav.nav-compact #logo-container {
+    width: 30px;
+    min-width: 30px;
+  }
+
+  #mobile-menu {
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, border-color 0.3s ease;
+  }
+
+  #mobile-menu.is-open {
+    max-height: 340px;
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+</style>
+
 <script>
   const nav = document.getElementById("main-nav");
+  const sections = document.querySelectorAll("section[id]");
+  const allNavLinks = document.querySelectorAll(".nav-links a, .mobile-nav-link:not(.btn-accent)");
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+  // Toggle mobile menu
+  if (mobileMenuBtn && mobileMenu && menuIcon) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("is-open");
+      if (isOpen) {
+        mobileMenu.classList.remove("is-open");
+        menuIcon.textContent = "menu";
+      } else {
+        mobileMenu.classList.add("is-open");
+        menuIcon.textContent = "close";
+      }
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("is-open");
+        menuIcon.textContent = "menu";
+      });
+    });
+  }
+
+  // Scroll logic for compact nav and active section link highlighting
   window.addEventListener(
     "scroll",
     () => {
-      nav.classList.toggle("nav-compact", window.scrollY > 50);
+      if (nav) {
+        nav.classList.toggle("nav-compact", window.scrollY > 50);
+      }
+
+      let current = "hero";
+      sections.forEach((section) => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        if (window.scrollY >= sectionTop - 250) {
+          current = section.getAttribute("id") || "hero";
+        }
+      });
+
+      allNavLinks.forEach((link) => {
+        link.classList.remove("text-primary");
+        link.classList.add("text-on-surface-variant");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.remove("text-on-surface-variant");
+          link.classList.add("text-primary");
+        }
+      });
     },
     { passive: true },
   );
