@@ -1,21 +1,63 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/icons/logo-solux.svg";
+---
+
 <nav
   id="main-nav"
   class="fixed top-0 left-0 w-full z-50 flex justify-center border-b border-white/6 bg-black/40 backdrop-blur-sm transition-all duration-300"
 >
-  <div class="nav-inner flex items-center justify-between md:justify-center md:gap-12 w-full max-w-6xl mx-auto px-4 md:px-container-padding py-3 transition-all duration-300 ease-in-out">
-    <a href="/" class="flex items-center gap-2 transition-all duration-300 nav-logo">
-      <span class="font-display-lg text-xl md:text-2xl font-bold tracking-tight text-primary">SOLUX</span>
+  <div
+    class="nav-inner flex items-center justify-center md:justify-between w-full mx-auto px-4 md:px-container-padding py-3 transition-all duration-300 ease-in-out"
+  >
+    <a
+      href="/"
+      class="flex items-center gap-2 transition-all duration-300 nav-logo"
+    >
+      <span
+        class="font-display-lg text-xl md:text-2xl font-bold tracking-tight text-primary"
+      >
+        <Image
+          src={logo}
+          alt="SOLUX - Energía Industrial Inteligente"
+          width={180}
+          loading="lazy"
+          decoding="async"
+        /></span
+      >
     </a>
     <div class="nav-links hidden md:flex gap-8 items-center">
-      <a href="#services" class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300">Servicios</a>
-      <a href="#projects" class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300">Proyectos</a>
-      <a href="#faq" class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300">FAQ</a>
-      <a href="#contact" class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300">Contacto</a>
+      <a
+        href="#services"
+        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+        >Servicios</a
+      >
+      <a
+        href="#projects"
+        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+        >Proyectos</a
+      >
+      <a
+        href="#faq"
+        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+        >FAQ</a
+      >
+      <a
+        href="#contact"
+        class="font-label-mono text-[11px] uppercase tracking-[0.15em] text-on-surface-variant hover:text-primary transition-all duration-300"
+        >Contacto</a
+      >
     </div>
     <div class="nav-cta hidden md:flex items-center">
-      <button class="nav-btn btn-accent bg-primary text-white font-label-mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 border border-primary transition-all duration-300">Solicitar Auditoría</button>
+      <button
+        class="nav-btn btn-accent bg-primary text-white font-label-mono text-[11px] uppercase tracking-[0.15em] px-5 py-2.5 border border-primary transition-all duration-300"
+        >Solicitar Auditoría</button
+      >
     </div>
-    <button class="md:hidden text-primary" aria-label="Abrir menú de navegación">
+    <button
+      class="md:hidden text-primary"
+      aria-label="Abrir menú de navegación"
+    >
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </div>
@@ -23,7 +65,11 @@
 
 <script>
   const nav = document.getElementById("main-nav");
-  window.addEventListener("scroll", () => {
-    nav.classList.toggle("nav-compact", window.scrollY > 50);
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      nav.classList.toggle("nav-compact", window.scrollY > 50);
+    },
+    { passive: true },
+  );
 </script>
