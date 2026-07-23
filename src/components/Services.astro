@@ -1,48 +1,92 @@
 ---
+const services = [
+  {
+    title: "SISTEMAS FOTOVOLTAICOS INDUSTRIALES",
+    description:
+      "Ingeniería e instalación de arreglos solares sobre techos industriales, naves y estacionamientos (carports) utilizando paneles bifaciales Tier 1 para un rendimiento óptimo.",
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+    icon: "grid_view",
+    accentColor: "primary",
+    clipClass: "clip-b",
+    borderClass: "clip-b-border",
+    innerClip: "clip-b-inner",
+  },
+  {
+    title: "ALMACENAMIENTO DE ENERGÍA (BESS)",
+    description:
+      "Sistemas de baterías de litio de alta capacidad para gestionar el consumo en horas pico y garantizar la continuidad operativa ante fallas de la red eléctrica.",
+    image:
+      "https://images.unsplash.com/photo-1712878352300-d53387c941d7?q=80&w=1939&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "battery_0_bar",
+    accentColor: "accent",
+    clipClass: "clip-c",
+    borderClass: "clip-c-border",
+    innerClip: "clip-c-inner",
+  },
+  {
+    title: "AUDITORÍA Y EFICIENCIA ENERGÉTICA",
+    description:
+      "Despliegue de sensores IoT y software en la nube para auditar fugas de energía, medir el factor de potencia y optimizar el consumo de maquinaria pesada.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    icon: "show_chart",
+    accentColor: "primary",
+    clipClass: "clip-b",
+    borderClass: "clip-b-border",
+    innerClip: "clip-b-inner",
+  },
+];
+---
+
 <section class="px-container-padding mb-section-gap" id="services">
   <div class="mb-16" data-animate>
-    <span class="font-label-mono text-label-mono text-primary uppercase mb-4 block">Capacidades Centrales</span>
-    <h2 class="font-headline-xl text-headline-xl text-white">Soluciones Industriales</h2>
+    <span
+      class="font-label-mono text-label-mono text-primary uppercase mb-4 block"
+      >Capacidades Centrales</span
+    >
+    <h2 class="font-headline-xl text-headline-xl text-white">
+      Soluciones Industriales
+    </h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate="stagger">
-    <div class="p-4 border border-white/5 bg-surface-container-low hover:bg-surface-container-high transition-colors duration-300">
-      <div class="aspect-[4/3] mb-6 relative overflow-hidden bg-surface">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop'); filter: grayscale(30%);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 w-10 h-10 bg-primary/20 border border-primary/40 flex items-center justify-center text-primary backdrop-blur-sm">
-          <span class="material-symbols-outlined text-sm">grid_view</span>
+    {
+      services.map((item) => (
+        <div
+          class={`group cursor-pointer ${item.clipClass} ${item.borderClass} p-[1px]`}
+        >
+          <div
+            class={`bg-surface-container-low hover:bg-surface-container-high transition-colors duration-500 p-6 flex flex-col justify-between h-full ${item.innerClip}`}
+          >
+            <div>
+              <div class="aspect-[4/3] mb-6 relative overflow-hidden bg-surface clip-b rounded-none">
+                <div
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={`background-image: url('${item.image}'); filter: grayscale(25%);`}
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div
+                  class={`absolute bottom-3 left-3 w-10 h-10 ${
+                    item.accentColor === "accent"
+                      ? "bg-accent/20 border-accent/40 text-accent"
+                      : "bg-primary/20 border-primary/40 text-primary"
+                  } border flex items-center justify-center backdrop-blur-sm`}
+                >
+                  <span class="material-symbols-outlined text-sm">
+                    {item.icon}
+                  </span>
+                </div>
+              </div>
+              <h3 class="font-headline-lg text-[18px] md:text-[22px] text-white mb-4 uppercase tracking-wide leading-snug">
+                {item.title}
+              </h3>
+              <p class="text-on-surface-variant leading-relaxed text-body-md text-sm md:text-base">
+                {item.description}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      <h3 class="font-headline-lg text-[20px] md:text-[24px] text-white mb-4 uppercase tracking-wide">SISTEMAS FOTOVOLTAICOS INDUSTRIALES</h3>
-      <p class="text-on-surface-variant leading-relaxed text-body-md">
-        Ingeniería e instalación de arreglos solares sobre techos industriales, naves y estacionamientos (carports) utilizando paneles bifaciales Tier 1 para un rendimiento óptimo.
-      </p>
-    </div>
-    <div class="p-4 border border-white/5 bg-surface-container-low hover:bg-surface-container-high transition-colors duration-300">
-      <div class="aspect-[4/3] mb-6 relative overflow-hidden bg-surface">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop'); filter: grayscale(30%);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 w-10 h-10 bg-accent/20 border border-accent/40 flex items-center justify-center text-accent backdrop-blur-sm">
-          <span class="material-symbols-outlined text-sm">battery_0_bar</span>
-        </div>
-      </div>
-      <h3 class="font-headline-lg text-[20px] md:text-[24px] text-white mb-4 uppercase tracking-wide">ALMACENAMIENTO DE ENERGÍA (BESS)</h3>
-      <p class="text-on-surface-variant leading-relaxed text-body-md">
-        Sistemas de baterías de litio de alta capacidad para gestionar el consumo en horas pico y garantizar la continuidad operativa ante fallas de la red eléctrica.
-      </p>
-    </div>
-    <div class="p-4 border border-white/5 bg-surface-container-low hover:bg-surface-container-high transition-colors duration-300">
-      <div class="aspect-[4/3] mb-6 relative overflow-hidden bg-surface">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'); filter: grayscale(30%);"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 w-10 h-10 bg-primary/20 border border-primary/40 flex items-center justify-center text-primary backdrop-blur-sm">
-          <span class="material-symbols-outlined text-sm">show_chart</span>
-        </div>
-      </div>
-      <h3 class="font-headline-lg text-[20px] md:text-[24px] text-white mb-4 uppercase tracking-wide">AUDITORÍA Y EFICIENCIA ENERGÉTICA</h3>
-      <p class="text-on-surface-variant leading-relaxed text-body-md">
-        Despliegue de sensores IoT y software en la nube para auditar fugas de energía, medir el factor de potencia y optimizar el consumo de maquinaria pesada.
-      </p>
-    </div>
+      ))
+    }
   </div>
 </section>

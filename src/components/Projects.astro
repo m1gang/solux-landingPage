@@ -1,33 +1,118 @@
 ---
+const projects = [
+  {
+    title: "Planta Logística Norte",
+    subtitle: "1.2 MWp Capacidad Instalada",
+    client: "Grupo Logístico TransAndino",
+    location: "Monterrey, MX",
+    tech: ["Paneles Bifaciales Tier 1", "Inversores Centrales 1500V", "Monitoreo SCADA Modbus"],
+    metrics: [
+      { label: "Generación Anual", val: "1.8 GWh" },
+      { label: "Ahorro Estimado", val: "38% / año" },
+      { label: "Reducción CO2", val: "890 ton/año" }
+    ],
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+    accent: "primary",
+    clipClass: "clip-b",
+    borderClass: "clip-b-border",
+    innerClip: "clip-b-inner",
+    textPosition: "top"
+  },
+  {
+    title: "Fábrica de Alimentos NutriCorp",
+    subtitle: "850 kWp + 2MWh Almacenamiento BESS",
+    client: "NutriCorp Internacional",
+    location: "Querétaro, MX",
+    tech: ["Baterías LFP de Alta Densidad", "Microinversores Redundantes", "Peak Shaving Automatizado"],
+    metrics: [
+      { label: "Uptime Garantizado", val: "99.9%" },
+      { label: "Respaldo Ininterrumpido", val: "4 Horas" },
+      { label: "ROI Proyectado", val: "3.2 Años" }
+    ],
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+    accent: "accent",
+    clipClass: "clip-c",
+    borderClass: "clip-c-border",
+    innerClip: "clip-c-inner",
+    textPosition: "bottom"
+  }
+];
+---
+
 <section class="px-container-padding mb-section-gap" id="projects">
   <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4" data-animate>
-    <h2 class="font-headline-xl text-headline-xl text-white uppercase tracking-tighter">Despliegues Destacados</h2>
-    <a href="#" class="font-label-mono text-label-mono text-accent uppercase border-b border-accent/50 hover:border-accent transition-colors">Ver Casos de Éxito</a>
+    <div>
+      <span class="font-label-mono text-label-mono text-primary uppercase mb-2 block">Casos de Éxito</span>
+      <h2 class="font-headline-xl text-headline-xl text-white uppercase tracking-tighter">Despliegues Destacados</h2>
+    </div>
+    
   </div>
+
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-animate="stagger">
-    <div class="group cursor-pointer">
-      <div class="aspect-[16/9] relative clip-b-border p-[1px] clip-b">
-        <div class="bg-surface h-full w-full relative overflow-hidden clip-b-inner">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop');"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-          <div class="absolute bottom-6 md:bottom-10 left-4 md:left-8 pr-4 md:pr-8 z-10">
-            <h4 class="text-white font-headline-lg text-xl md:text-headline-lg mb-1">Planta Logística Norte</h4>
-            <span class="font-label-mono text-[10px] text-primary uppercase">1.2 MWp Capacidad Instalada</span>
+    {projects.map((proj) => (
+      <div class="group cursor-pointer">
+        <div class={`min-h-[480px] h-full relative ${proj.borderClass} p-[1px] ${proj.clipClass}`}>
+          <div class={`bg-surface h-full w-full relative overflow-hidden ${proj.innerClip} flex flex-col justify-between`}>
+            <!-- Background Image -->
+            <div
+              class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              style={`background-image: url('${proj.image}');`}
+            ></div>
+
+            <!-- Gradient overlay based on text position -->
+            <div
+              class={`absolute inset-0 bg-gradient-to-t ${
+                proj.textPosition === 'bottom'
+                  ? 'from-black/40 via-black/85 to-black/95'
+                  : 'from-black/95 via-black/80 to-transparent'
+              }`}
+            ></div>
+
+            <!-- Card Content Container -->
+            <div class={`relative z-10 p-6 md:p-8 flex flex-col justify-between h-full ${proj.textPosition === 'top' ? 'flex-col-reverse' : ''}`}>
+              <!-- Content Block (Top or Bottom) -->
+              <div class="space-y-4">
+                <div>
+                  <span class="font-label-mono text-[10px] uppercase text-white/60 tracking-widest block mb-1">
+                    {proj.client} • {proj.location}
+                  </span>
+                  <h4 class="text-white font-headline-lg text-xl md:text-2xl mb-1 leading-snug">
+                    {proj.title}
+                  </h4>
+                  <span class={`font-label-mono text-[11px] uppercase tracking-wider ${proj.accent === 'accent' ? 'text-accent' : 'text-primary'}`}>
+                    {proj.subtitle}
+                  </span>
+                </div>
+
+                <!-- Enriched Tech Chips -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {proj.tech.map((t) => (
+                    <span class="font-label-mono text-[9px] uppercase tracking-wider px-2.5 py-1 bg-white/10 backdrop-blur-md border border-white/15 text-white/90">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <!-- Enriched Metrics Row -->
+                <div class="grid grid-cols-3 gap-3 pt-3 border-t border-white/10">
+                  {proj.metrics.map((m) => (
+                    <div>
+                      <span class="font-label-mono text-[9px] uppercase text-white/50 block">
+                        {m.label}
+                      </span>
+                      <span class="font-headline-lg text-sm md:text-base font-bold text-white">
+                        {m.val}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="group cursor-pointer">
-      <div class="aspect-[16/9] relative clip-c-border p-[1px] clip-c">
-        <div class="bg-surface h-full w-full relative overflow-hidden clip-c-inner">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop');"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-          <div class="absolute bottom-6 md:bottom-10 left-4 md:left-8 pr-4 md:pr-8 z-10">
-            <h4 class="text-white font-headline-lg text-xl md:text-headline-lg mb-1">Fábrica de Alimentos NutriCorp</h4>
-            <span class="font-label-mono text-[10px] text-accent uppercase">850 kWp + 2MWh Almacenamiento BESS</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    ))}
   </div>
 </section>

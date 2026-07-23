@@ -1,34 +1,54 @@
 ---
+const faqs = [
+  {
+    question: '¿Cuál es el tiempo típico de instalación para una planta de 1MW+?',
+    answer: 'Generalmente, una instalación de escala comercial toma de 4 a 6 meses desde la aprobación de factibilidad hasta la conexión a red, dependiendo de permisos locales y complejidad del sitio.',
+    open: true,
+    clipClass: 'clip-b',
+    borderClass: 'clip-b-border',
+    innerClip: 'clip-b-inner'
+  },
+  {
+    question: '¿Soportan sus sistemas integración con infraestructura SCADA existente?',
+    answer: 'Sí, nuestra plataforma de monitoreo está diseñada para interoperabilidad con la mayoría de los sistemas SCADA industriales usando protocolos estándar como Modbus o DNP3.',
+    open: false,
+    clipClass: 'clip-c',
+    borderClass: 'clip-c-border',
+    innerClip: 'clip-c-inner'
+  },
+  {
+    question: '¿Cuál es la tasa de degradación esperada de las baterías BESS a 10 años?',
+    answer: 'Nuestros sistemas de almacenamiento basados en LFP están diseñados para una larga vida útil de ciclos, manteniendo típicamente >80% de capacidad tras 10 años de operación diaria.',
+    open: false,
+    clipClass: 'clip-b',
+    borderClass: 'clip-b-border',
+    innerClip: 'clip-b-inner'
+  }
+];
+---
+
 <section class="px-4 md:px-container-padding mb-section-gap max-w-4xl mx-auto" id="faq">
-  <h2 class="font-headline-xl text-headline-xl text-white mb-12 text-center uppercase tracking-tighter" data-animate>Preguntas Frecuentes Técnicas</h2>
-  <div class="space-y-4" data-animate="stagger">
-    <details class="p-6 group cursor-pointer border border-white/8 bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300" open>
-      <summary class="flex justify-between items-center font-headline-lg text-[20px] text-white" aria-expanded="true">
-        ¿Cuál es el tiempo típico de instalación para una planta de 1MW+?
-        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300">expand_more</span>
-      </summary>
-      <p class="mt-4 text-on-surface-variant pr-4">
-        Generalmente, una instalación de escala comercial toma de 4 a 6 meses desde la aprobación de factibilidad hasta la conexión a red, dependiendo de permisos locales y complejidad del sitio.
-      </p>
-    </details>
-    <details class="p-6 group cursor-pointer border border-white/8 bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300">
-      <summary class="flex justify-between items-center font-headline-lg text-[20px] text-white" aria-expanded="false">
-        ¿Soportan sus sistemas integración con infraestructura SCADA existente?
-        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300">expand_more</span>
-      </summary>
-      <p class="mt-4 text-on-surface-variant pr-4">
-        Sí, nuestra plataforma de monitoreo está diseñada para interoperabilidad con la mayoría de los sistemas SCADA industriales usando protocolos estándar como Modbus o DNP3.
-      </p>
-    </details>
-    <details class="p-6 group cursor-pointer border border-white/8 bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300">
-      <summary class="flex justify-between items-center font-headline-lg text-[20px] text-white" aria-expanded="false">
-        ¿Cuál es la tasa de degradación esperada de las baterías BESS a 10 años?
-        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300">expand_more</span>
-      </summary>
-      <p class="mt-4 text-on-surface-variant pr-4">
-        Nuestros sistemas de almacenamiento basados en LFP están diseñados para una larga vida útil de ciclos, manteniendo típicamente &gt;80% de capacidad tras 10 años de operación diaria.
-      </p>
-    </details>
+  <div class="text-center mb-12" data-animate>
+    <span class="font-label-mono text-label-mono text-primary uppercase mb-2 block">Resolución Técnica</span>
+    <h2 class="font-headline-xl text-headline-xl text-white uppercase tracking-tighter">Preguntas Frecuentes Técnicas</h2>
+  </div>
+
+  <div class="space-y-6" data-animate="stagger">
+    {faqs.map((faq) => (
+      <div class={`${faq.clipClass} ${faq.borderClass} p-[1px]`}>
+        <details class={`group cursor-pointer bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-300 p-6 ${faq.innerClip}`} open={faq.open}>
+          <summary class="flex justify-between items-center font-headline-lg text-[18px] md:text-[20px] text-white list-none select-none" aria-expanded={faq.open ? "true" : "false"}>
+            <span class="pr-4">{faq.question}</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300 flex-shrink-0">
+              expand_more
+            </span>
+          </summary>
+          <p class="mt-4 text-on-surface-variant leading-relaxed text-body-md text-sm md:text-base pr-6 border-t border-white/5 pt-4">
+            {faq.answer}
+          </p>
+        </details>
+      </div>
+    ))}
   </div>
 </section>
 
