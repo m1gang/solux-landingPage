@@ -11,7 +11,7 @@ const projects = [
       { label: "Ahorro Estimado", val: "38% / año" },
       { label: "Reducción CO2", val: "890 ton/año" }
     ],
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop",
     accent: "primary",
     clipClass: "clip-b",
     borderClass: "clip-b-border",
@@ -29,7 +29,7 @@ const projects = [
       { label: "Respaldo Ininterrumpido", val: "4 Horas" },
       { label: "ROI Proyectado", val: "3.2 Años" }
     ],
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=800&auto=format&fit=crop",
     accent: "accent",
     clipClass: "clip-c",
     borderClass: "clip-c-border",
@@ -76,9 +76,9 @@ const projects = [
                   <span class="font-label-mono text-[10px] uppercase text-white/60 tracking-widest block mb-1">
                     {proj.client} • {proj.location}
                   </span>
-                  <h4 class="text-white font-headline-lg text-xl md:text-2xl mb-1 leading-snug">
+                  <h3 class="text-white font-headline-lg text-xl md:text-2xl mb-1 leading-snug">
                     {proj.title}
-                  </h4>
+                  </h3>
                   <span class={`font-label-mono text-[11px] uppercase tracking-wider ${proj.accent === 'accent' ? 'text-accent' : 'text-primary'}`}>
                     {proj.subtitle}
                   </span>
